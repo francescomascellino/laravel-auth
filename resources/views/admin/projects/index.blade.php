@@ -22,6 +22,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Description</th>
                         <th scope="col">Technologies used</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,12 @@
                             <td class="align-middle">{{ $project->title }}</td>
                             <td class="align-middle">{{ $project->description }}</td>
                             <td class="align-middle">{{ $project->tech }}</td>
+                            <td class="align-middle">
+                                {{-- I PROGETTI SONO COLLEGATI TRAMITE LO SLUG --}}
+                                <a href="{{ route('admin.projects.show', $project->slug) }}">Details</a>
+                                <a href="{{ route('admin.projects.edit', $project->slug) }}">Edit</a>
+                                <a href="#">Delete</a>
+                            </td>
                         </tr>
                     @empty
                         <td class="align-middle">No Projects to show</td>

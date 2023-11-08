@@ -128,7 +128,7 @@
                                 </a>
 
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.projects.index' ? 'bg-secondary' : '' }}"
-                                    href="{{ url('admin/projects') }}">
+                                    href="{{ route('admin.projects.index') }}">
                                     <i class="fa-solid fa-diagram-project fa-lg fa-fw"></i> {{ __('Projects') }}
                                 </a>
 
