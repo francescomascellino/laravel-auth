@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 use function PHPUnit\Framework\isNull;
 
@@ -59,6 +60,8 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $valData = $request->validated();
+
+        $valData['slug'] = Str::slug($request->title, '-');
 
         if ($request->has('thumb')) {
 
