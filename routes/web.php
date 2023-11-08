@@ -21,9 +21,9 @@ Route::get('/', function () {
 });
 
 // ROUTES ADMIN
-Route::middleware('auth', 'verified')
-    ->name('admin.')
-    ->prefix('admin')
+Route::middleware('auth', 'verified') // PER GLI UTENTI LOGGATI & VERIFICATI
+    ->name('admin.') // NOME DELLE ROTTE INIZIA CON 'admin.'
+    ->prefix('admin') // PREFIX DEGLI URL INIZIANO CON '/admin/'
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('projects', ProjectController::class );

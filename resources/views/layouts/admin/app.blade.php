@@ -35,7 +35,7 @@
                         <a class="navbar-brand" href="/">BoolPress</a>
                         <p class="text-light"> (layouts/admin/app)</p>
                     </div>
-                    
+
 
                     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
                         data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
@@ -50,14 +50,14 @@
 
                         <ul class="navbar-nav">
 
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown dropstart">
                                 <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </button>
 
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item" href="{{ url('admin') }}">{{__('Dashboard')}}</a>
+                                    <li><a class="dropdown-item" href="{{ url('admin') }}">{{ __('Dashboard') }}</a>
                                     </li>
                                     <li><a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
                                     </li>
@@ -126,6 +126,12 @@
                                     href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
+
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.projects.index' ? 'bg-secondary' : '' }}"
+                                    href="{{ url('admin/projects') }}">
+                                    <i class="fa-solid fa-diagram-project fa-lg fa-fw"></i> {{ __('Projects') }}
+                                </a>
+
                             </li>
 
                         </ul>
