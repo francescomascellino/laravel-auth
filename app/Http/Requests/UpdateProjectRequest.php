@@ -23,7 +23,7 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'title' => 'required|bail|min:3|max:200',
-            'thumb' => 'nullable|image|max:150',
+            'thumb' => 'nullable|image|max:300',
             'description' => 'nullable|bail|min:3|max:500',
             'tech' => 'nullable|bail|min:3|max:200',
         ];

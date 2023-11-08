@@ -10,6 +10,14 @@
             {{ __('Showing Project') }} ID: {{ $project->id }}
         </h3>
 
+        @if (session('status'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                {{ session('status') }}
+            </div>
+        @endif
+
         <div class="row justify-content-center my-3">
             <div class="col-6">
                 <div class="card">
@@ -18,12 +26,11 @@
                     </div>
 
                     @if (str_contains($project->thumb, 'http'))
-                        <img class="img-fluid" style="height: 400px" src="{{ $project->thumb }}" alt="{{ $project->title }}">
+                        <img class="img-fluid" style="height: 400px" src="{{ $project->thumb }}"
+                            alt="{{ $project->title }}">
                     @else
                         <img class="img-fluid" style="height: 400px" src="{{ asset('storage/' . $project->thumb) }}">
                     @endif
-
-                    {{-- <img src="https://picsum.photos/400/200" class="" alt="{{ $project->title }}" style="width: 100"> --}}
 
                     <div class="card-body">
                         <p><strong>Description: </strong>{{ $project->description }}</p>
