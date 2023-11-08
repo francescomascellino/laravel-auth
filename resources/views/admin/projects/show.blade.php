@@ -11,12 +11,19 @@
         </h3>
 
         <div class="row justify-content-center my-3">
-            <div class="col">
+            <div class="col-6">
                 <div class="card">
                     <div class="card-header">
                         <h5>{{ $project->title }}</h5>
                     </div>
-                    <img src="https://picsum.photos/400/200" class="" alt="{{ $project->title }}" style="width: 100">
+
+                    @if (str_contains($project->thumb, 'http'))
+                        <img class="img-fluid" style="height: 400px" src="{{ $project->thumb }}" alt="{{ $project->title }}">
+                    @else
+                        <img class="img-fluid" style="height: 400px" src="{{ asset('storage/' . $project->thumb) }}">
+                    @endif
+
+                    {{-- <img src="https://picsum.photos/400/200" class="" alt="{{ $project->title }}" style="width: 100"> --}}
 
                     <div class="card-body">
                         <p><strong>Description: </strong>{{ $project->description }}</p>

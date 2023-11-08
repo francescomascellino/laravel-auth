@@ -29,7 +29,16 @@
                     @forelse ($projects as $project)
                         <tr class="">
                             <td class="align-middle" scope="row">{{ $project->id }}</td>
-                            <td class="text-center align-middle">{{ $project->thumb }}</td>
+
+                            @if (str_contains($project->thumb, 'http'))
+                                <td class="text-center align-middle"><img class="img-fluid" style="height: 100px"
+                                        src="{{ $project->thumb }}" alt="{{ $project->title }}"></td>
+                            @else
+                                <td class="text-center align-middle"><img class="img-fluid" style="height: 100px"
+                                        src="{{ asset('storage/' . $project->thumb) }}"></td>
+                            @endif
+
+
                             <td class="align-middle">{{ $project->title }}</td>
                             <td class="align-middle">{{ $project->description }}</td>
                             <td class="align-middle">{{ $project->tech }}</td>
@@ -41,7 +50,7 @@
                             </td>
                         </tr>
                     @empty
-                        <td class="align-middle">No Projects to show</td>
+                        <td class="align-middle text-center" colspan="6">No Projects to show</td>
                     @endforelse
 
                 </tbody>
