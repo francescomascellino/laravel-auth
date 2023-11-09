@@ -23,5 +23,12 @@
                 </div>
             </div>
         </div>
+
+        <div class="row justify-content-center">
+            <p>CREATE CARDS</p>
+            Total Projects {{$total_projects}}
+            Total Users {{$total_users}}
+        </div>
+
     </div>
 @endsection

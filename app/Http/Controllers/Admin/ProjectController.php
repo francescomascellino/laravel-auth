@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+// use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-
 use function PHPUnit\Framework\isNull;
 
 class ProjectController extends Controller
@@ -18,7 +18,11 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        // $projects = Project::all();
+
+        // PAGINATION
+        $projects = Project::orderByDesc('id')->paginate(4);
+
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -101,6 +105,12 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        if (!isNull($project->thumb)) {
+            Storage::delete($project->thumb);
+        }
+
+        $project->delete();
+
+        return to_route('admin.projects.index')->with('status', 'Well Done, Element Moved to the Recycle Bin Succeffully');
     }
 }

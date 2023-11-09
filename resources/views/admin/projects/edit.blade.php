@@ -46,9 +46,12 @@
 
                         <label for="description" class="form-label"><strong>Description</strong></label>
 
-                        <input type="text" class="form-control" name="description" id="description"
+                        <textarea class="form-control" name="description" id="description" aria-describedby="helpTitle" cols="30" rows="5">{{ old('description') ? old('description') : $project->description }}</textarea>
+
+                        {{-- OLD FORM --}}
+                        {{-- <input type="text" class="form-control" name="description" id="description"
                             aria-describedby="helpTitle"
-                            value="{{ old('description') ? old('description') : $project->description }}">
+                            value="{{ old('description') ? old('description') : $project->description }}"> --}}
 
                         @error('description')
                             <div class="text-danger">{{ $message }}</div>

@@ -41,8 +41,11 @@
 
                         <label for="description" class="form-label"><strong>Description</strong></label>
 
-                        <input type="text" class="form-control" name="description" id="description"
-                            aria-describedby="helpTitle" placeholder="New project Description">
+                        <textarea class="form-control" name="description" id="description" aria-describedby="helpTitle" cols="30" rows="5" placeholder="New project Description"></textarea>
+
+                        {{-- OLD FORM --}}
+                        {{-- <input type="text" class="form-control" name="description" id="description"
+                            aria-describedby="helpTitle" placeholder="New project Description"> --}}
 
                         @error('description')
                             <div class="text-danger">{{ $message }}</div>
