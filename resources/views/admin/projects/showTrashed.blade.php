@@ -35,6 +35,8 @@
                     <div class="card-body">
                         <p><strong>Description: </strong>{{ $project->description }}</p>
                         <p><strong>Technologies used: </strong>{{ $project->tech }}</p>
+                        <p><i class="fa-brands fa-github"></i> {{ $project->github }}</p>
+                        <p><i class="fa-solid fa-link"></i> {{ $project->link }}</p>
                     </div>
                 </div>
             </div>

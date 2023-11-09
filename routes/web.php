@@ -35,6 +35,8 @@ Route::middleware('auth', 'verified') // PER GLI UTENTI LOGGATI & VERIFICATI
         Route::resource('projects', ProjectController::class )->parameters(['projects' => 'project:slug']);
     });
 
+    Route::get('projects/recycle', [ProjectController::class, 'recycle']); // FARE DOMANDE SU QUESTO
+
 /* Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard'); */

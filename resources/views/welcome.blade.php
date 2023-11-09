@@ -14,7 +14,7 @@
             <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-3 my-3">
                 @foreach ($projects as $project)
                 <div class="col">
-                    <div class="card">
+                    <div class="card h-100">
                     <div class="card-header" style="height: 4rem">
                         <h5>{{ $project->title }}</h5>
                     </div>
@@ -29,6 +29,8 @@
                     <div class="card-body">
                         <p><strong>Description: </strong>{{ $project->description }}</p>
                         <p><strong>Technologies used: </strong>{{ $project->tech }}</p>
+                        <p><i class="fa-brands fa-github"></i> {{ $project->github }}</p>
+                        <p><i class="fa-solid fa-link"></i> {{ $project->link }}</p>
                     </div>
                 </div>
                 </div>
