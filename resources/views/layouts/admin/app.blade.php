@@ -36,7 +36,6 @@
                         <p class="text-light"> (layouts/admin/app)</p>
                     </div>
 
-
                     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
                         data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -84,6 +83,7 @@
             </nav>
 
         </header>
+
         {{-- OLD HEADER --}}
         {{--         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
 
@@ -118,6 +118,7 @@
         aggiungere i link necessari giorno per giorno
         -->
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
+
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
@@ -141,13 +142,14 @@
 
                         </ul>
 
-
                     </div>
+
                 </nav>
 
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     @yield('content')
                 </main>
+
             </div>
         </div>
 

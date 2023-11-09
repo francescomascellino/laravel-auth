@@ -35,11 +35,13 @@
                     <div class="card-body">
                         <p><strong>Description: </strong>{{ $project->description }}</p>
                         <p><strong>Technologies used: </strong>{{ $project->tech }}</p>
-
                     </div>
                 </div>
             </div>
         </div>
+
+        <a href="{{ route('admin.projects.index') }}" class="btn btn-primary my-3"><i
+                class="fa-solid fa-arrow-rotate-left"></i> Back</a>
 
     </div>
 @endsection

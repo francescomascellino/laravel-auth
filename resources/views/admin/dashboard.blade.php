@@ -16,7 +16,7 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">{{ __('User Dashboard') }}</div>
+                    <div class="card-header"><i class="fa-solid fa-user"></i> {{ __('User Dashboard') }}</div>
 
                     <div class="card-body">
                         {{ __('You are logged in') }}, {{ Auth::user()->name }}!
@@ -28,19 +28,25 @@
         <div class="row justify-content-center my-3">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">{{ __('Users') }}</div>
+                    <div class="card-header"><i class="fa-solid fa-users"></i></i> {{ __('Users') }}</div>
 
                     <div class="card-body">
-                        <p>There are a total of {{ $total_users }} registered users on the platform</p>
+                        <p>There are a total Users registered on the platform: <strong>{{ $total_users }}</strong></p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row justify-content-center">
-            <p>CREATE CARDS</p>
-            Total Projects {{ $total_projects }}
-            Total Users {{ $total_users }}
+        <div class="row justify-content-center my-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header"><i class="fa-solid fa-diagram-project"></i> {{ __('Projects') }}</div>
+
+                    <div class="card-body">
+                        <p>There are a total of <strong>{{ $total_projects }}</strong> registered Projects on the platform</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

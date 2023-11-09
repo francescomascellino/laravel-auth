@@ -81,13 +81,13 @@
                                             <div class="modal-footer">
 
                                                 <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Cancel</button>
+                                                    data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i> Cancel</button>
 
                                                 <form action="{{ route('admin.projects.destroy', $project) }}"
                                                     method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger m-2" type="submit">Delete</button>
+                                                    <button class="btn btn-danger m-2" type="submit"><i class="fa-regular fa-trash-can"></i> Delete</button>
                                                 </form>
 
                                             </div>

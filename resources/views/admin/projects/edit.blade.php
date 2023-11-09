@@ -96,8 +96,8 @@
 
                     </div>
 
-                    <button type="submit" class="btn btn-success my-3">SAVE</button>
-                    <a class="btn btn-primary" href="{{ route('admin.projects.index') }}">CANCEL</a>
+                    <button type="submit" class="btn btn-success my-3"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+                    <a class="btn btn-primary" href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-ban"></i> Cancel</a>
 
                 </form>
             </div>

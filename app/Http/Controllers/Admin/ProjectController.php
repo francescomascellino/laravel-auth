@@ -92,7 +92,6 @@ class ProjectController extends Controller
             $valData['thumb'] = $path;
         }
 
-        // dd($valData);
         // AGGIORNA L'ENTITA' CON I VALORI DI $valData
         $project->update($valData);
         return to_route('admin.projects.show', $project->slug)->with('status', 'Well Done, Element Edited Succeffully');
@@ -132,10 +131,7 @@ class ProjectController extends Controller
 
         $project = Project::onlyTrashed()->find($id);
 
-        // dd($project->thumb);
-
         if (!is_Null($project->thumb)) {
-            // dd($project->thumb);
             Storage::delete($project->thumb);
         }
 
