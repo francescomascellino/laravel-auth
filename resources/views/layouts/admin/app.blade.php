@@ -132,6 +132,11 @@
                                     <i class="fa-solid fa-diagram-project fa-lg fa-fw"></i> {{ __('Projects') }}
                                 </a>
 
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.projects.recycle' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.projects.recycle') }}">
+                                    <i class="fa-regular fa-trash-can fa-lg fa-fw"></i> {{ __('Recycle Bin') }}
+                                </a>
+
                             </li>
 
                         </ul>

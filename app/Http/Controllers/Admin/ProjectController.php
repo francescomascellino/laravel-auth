@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
-// use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use function PHPUnit\Framework\isNull;
@@ -105,12 +104,48 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        $project->delete();
+
+        return to_route('admin.projects.index')->with('status', 'Well Done, Element Moved to the Recycle Bin Succeffully');
+    }
+
+    public function recycle()
+    {
+        // $projects = Project::all();
+
+        // PAGINATION
+        $trashed_projects = Project::onlyTrashed()->paginate(4);
+
+        return view('admin.projects.recycle', compact('trashed_projects'));
+    }
+
+    public function restore($id)
+    {
+
+        $project = Project::onlyTrashed()->find($id);
+        $project->restore();
+
+        return to_route('admin.projects.recycle')->with('status', 'Well Done, Element Restored Succeffully');
+    }
+
+    public function forceDelete($id)
+    {
+
+        $project = Project::onlyTrashed()->find($id);
+
         if (!isNull($project->thumb)) {
             Storage::delete($project->thumb);
         }
 
-        $project->delete();
+        $project->forceDelete();
 
-        return to_route('admin.projects.index')->with('status', 'Well Done, Element Moved to the Recycle Bin Succeffully');
+        return to_route('admin.projects.recycle')->with('status', 'Well Done, Element Deleted Succeffully');
+    }
+
+    public function showTrashed($id)
+    {
+        $project = Project::onlyTrashed()->find($id);
+        dd($project);
+        return view('admin.projects.showTrashed', compact('project'));
     }
 }

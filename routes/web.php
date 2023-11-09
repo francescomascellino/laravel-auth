@@ -26,9 +26,12 @@ Route::middleware('auth', 'verified') // PER GLI UTENTI LOGGATI & VERIFICATI
     ->prefix('admin') // PREFIX DEGLI URL INIZIANO CON '/admin/'
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('projects/restore/{id}', [ProjectController::class, 'restore'])->name('projects.restore');
+        Route::get('projects/forceDelete/{id}', [ProjectController::class, 'forceDelete'])->name('projects.forceDelete');
+        Route::get('projects/recycle', [ProjectController::class, 'recycle'])->name('projects.recycle');
+        Route::get('projects/recycle/{id}', [ProjectController::class, 'showTrashed'])->name('projects.showTrashed');
         Route::resource('projects', ProjectController::class )->parameters(['projects' => 'project:slug']);
     });
-
 
 /* Route::get('/dashboard', function () {
     return view('dashboard');
