@@ -14,8 +14,8 @@
             </div>
         @endif
 
-        <p>👇 METTERE POSITION FIXED ANGOLO IN BASSO A DX</p>
-        <a href="{{ route('admin.projects.create') }}" class="btn btn-primary my-3"><i class="fa-solid fa-file-circle-plus"></i> New Project</a>
+        <a href="{{ route('admin.projects.create') }}" class="btn btn-primary my-3"><i
+                class="fa-solid fa-file-circle-plus"></i> New Project</a>
 
         <div class="table-responsive">
             <table class="table table-light table-striped">
@@ -48,8 +48,10 @@
                             <td class="align-middle">{{ $project->tech }}</td>
                             <td class="align-middle text-center">
                                 {{-- I PROGETTI SONO COLLEGATI TRAMITE LO SLUG --}}
-                                <a href="{{ route('admin.projects.show', $project->slug) }}" class="btn btn-primary m-1"><i class="fa-solid fa-eye"></i></a>
-                                <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning m-1"><i class="fa-solid fa-pen"></i></a>
+                                <a href="{{ route('admin.projects.show', $project->slug) }}" class="btn btn-primary m-1"><i
+                                        class="fa-solid fa-eye"></i></a>
+                                <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning m-1"><i
+                                        class="fa-solid fa-pen"></i></a>
                                 {{-- <a href="#">Delete</a> --}}
 
                                 <!-- DELETE Modal trigger button -->
@@ -63,8 +65,7 @@
                                 <div class="modal fade" id="deleteproject{{ $project->id }}" tabindex="-1"
                                     data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
                                     aria-labelledby="modalTitle{{ $project->id }}" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered"
-                                        role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="modalTitle{{ $project->id }}">
@@ -73,7 +74,8 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body text-start ">
-                                                <p>This operation will move the project "<strong>{{$project->title}}</strong>" in the Recycle Bin.</p>
+                                                <p>This operation will move the project
+                                                    "<strong>{{ $project->title }}</strong>" in the Recycle Bin.</p>
                                                 <p>Are you sure?</p>
                                             </div>
                                             <div class="modal-footer">
@@ -108,12 +110,12 @@
                 </tbody>
             </table>
 
-            
+
 
         </div>
 
         <div class="my-3">
-                {{ $projects->links('pagination::bootstrap-5') }}
+            {{ $projects->links('pagination::bootstrap-5') }}
         </div>
 
     </div>

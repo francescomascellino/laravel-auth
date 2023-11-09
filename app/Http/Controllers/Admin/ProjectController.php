@@ -8,7 +8,6 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use function PHPUnit\Framework\isNull;
 
 class ProjectController extends Controller
 {
@@ -84,7 +83,7 @@ class ProjectController extends Controller
             $path = Storage::put('thumbs', $newThumb);
 
             // SE IL FUMETTO HA GIA' UNA COVER NEL DB  NEL FILE SYSTEM, DEVE ESSERE ELIMINATA DATO CHE LA STIAMO SOSTITUENDO
-            if (!isNull($project->thumb) && Storage::fileExists($project->thumb)) {
+            if (!is_Null($project->thumb) && Storage::fileExists($project->thumb)) {
                 // ELIMINA LA VECCHIA PREVIEW
                 Storage::delete($project->thumb);
             }
@@ -133,9 +132,17 @@ class ProjectController extends Controller
 
         $project = Project::onlyTrashed()->find($id);
 
-        if (!isNull($project->thumb)) {
+        // dd($project->thumb);
+
+        if (!is_Null($project->thumb)) {
+            // dd($project->thumb);
             Storage::delete($project->thumb);
         }
+
+        /* if ($project->thumb != null && $project->thumb != '') {
+            // dd($project->thumb);
+            Storage::delete($project->thumb);
+        } */
 
         $project->forceDelete();
 
