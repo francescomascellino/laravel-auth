@@ -41,7 +41,10 @@ class ProjectController extends Controller
     {
         $valData = $request->validated();
 
-        $valData['slug'] = Str::slug($request->title, '-');
+        // $valData['slug'] = Str::slug($request->title, '-');
+
+        // INVOCHIAMO IL METODO STATICO DAL MODELLO
+        $valData['slug'] = Project::generateSlug($request->title);
 
         if ($request->has('thumb')) {
             $file_path = Storage::put('thumbs', $request->thumb);

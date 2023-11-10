@@ -16,7 +16,7 @@ class Project extends Model
     protected $fillable = ['title', 'slug', 'thumb', 'description', 'tech', 'github', 'link'];
 
     // CHECK IF ALREADY EXISTS WHEN ADDING ENTRIES
-    public function generateSlug($title)
+    public static function generateSlug($title)
     {
         return Str::slug($title, '-');
     }
