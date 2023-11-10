@@ -43,6 +43,12 @@
                     </div>
                 @endforeach
             </div>
+
+            {{-- PAGINATION --}}
+            <div class="my-3">
+                {{ $projects->links('pagination::bootstrap-5') }}
+            </div>
+
         </div>
     </div>
 

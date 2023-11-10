@@ -118,7 +118,7 @@ class ProjectController extends Controller
     public function recycle()
     {
         // PAGINATION
-        $trashed_projects = Project::onlyTrashed()->paginate(4);
+        $trashed_projects = Project::onlyTrashed()->orderByDesc('deleted_at')->paginate(4);
 
         return view('admin.projects.recycle', compact('trashed_projects'));
     }
