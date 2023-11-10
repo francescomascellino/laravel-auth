@@ -96,12 +96,12 @@
                                     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="modalTitle{{ $project->id }}">
+                                                <h5 class="modal-title text-start" id="modalTitle{{ $project->id }}">
                                                     {{ $project->title }}</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body text-start ">
+                                            <div class="modal-body text-start">
                                                 <p>This operation will move the project
                                                     "<strong>{{ $project->title }}</strong>" in the Recycle Bin.</p>
                                                 <p>Are you sure?</p>

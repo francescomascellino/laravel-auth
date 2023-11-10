@@ -114,10 +114,9 @@
                                 <path class="cls-10" d="M60.4176,15H52V46h9V15.5824A.5823.5823,0,0,0,60.4176,15Z" />
                             </g>
                         </svg>
-
+                        {{isset($page_title) ? ' ' . $page_title : 'Portfolio'}}
                     </div>
-                    layouts/app
-                    {{-- config('app.name', 'Laravel') --}}
+                    {{-- layouts/app --}}
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
