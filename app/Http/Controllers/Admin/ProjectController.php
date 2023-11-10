@@ -76,7 +76,10 @@ class ProjectController extends Controller
     {
         $valData = $request->validated();
 
-        $valData['slug'] = Str::slug($request->title, '-');
+        // $valData['slug'] = Str::slug($request->title, '-');
+
+        // INVOCA IL METODO DENTRO IL MODEL
+        $valData['slug'] = $project->generateSlug($request->title);
 
         if ($request->has('thumb')) {
 

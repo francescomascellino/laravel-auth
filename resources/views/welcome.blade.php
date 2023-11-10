@@ -10,7 +10,6 @@
 
     <div class="content">
         <div class="container">
-            <p>welcome.blade</p>
             <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 g-3 my-3">
                 @foreach ($projects as $project)
                     <div class="col">
@@ -46,4 +45,6 @@
             </div>
         </div>
     </div>
+
+    <h1>welcome.blade</h1>
 @endsection
