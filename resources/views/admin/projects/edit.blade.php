@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>ADMIN/PROJECTS/EDIT.BLADE</h1>
+
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Project Edit Page for') }} {{ Auth::user()->name }}.
         </h2>
@@ -46,7 +46,8 @@
 
                         <label for="description" class="form-label"><strong>Description</strong></label>
 
-                        <textarea class="form-control" name="description" id="description" aria-describedby="helpTitle" cols="30" rows="5">{{ old('description') ? old('description') : $project->description }}</textarea>
+                        <textarea class="form-control" name="description" id="description" aria-describedby="helpTitle" cols="30"
+                            rows="5">{{ old('description') ? old('description') : $project->description }}</textarea>
 
                         {{-- OLD FORM --}}
                         {{-- <input type="text" class="form-control" name="description" id="description"
@@ -123,12 +124,16 @@
 
                     </div>
 
-                    <button type="submit" class="btn btn-success my-3"><i class="fa-solid fa-floppy-disk"></i> Save</button>
-                    <a class="btn btn-primary" href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-ban"></i> Cancel</a>
+                    <button type="submit" class="btn btn-success my-3"><i class="fa-solid fa-floppy-disk"></i>
+                        Save</button>
+                    <a class="btn btn-primary" href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-ban"></i>
+                        Cancel</a>
 
                 </form>
             </div>
         </div>
 
     </div>
+
+    <h1>ADMIN/PROJECTS/EDIT.BLADE</h1>
 @endsection

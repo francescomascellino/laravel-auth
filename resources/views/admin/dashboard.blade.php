@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>ADMIN/DASHBOARD.BLADE</h1>
+
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Dashboard') }}
         </h2>
@@ -43,11 +43,14 @@
                     <div class="card-header"><i class="fa-solid fa-diagram-project"></i> {{ __('Projects') }}</div>
 
                     <div class="card-body">
-                        <p>There are a total of <strong>{{ $total_projects }}</strong> registered Projects on the platform</p>
+                        <p>There are a total of <strong>{{ $total_projects }}</strong> registered Projects on the platform
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
+
+    <h1>ADMIN/DASHBOARD.BLADE</h1>
 @endsection

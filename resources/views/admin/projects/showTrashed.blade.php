@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>ADMIN/PROJECTS/SHOWTRASHED.BLADE</h1>
+
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Project Details for') }} {{ Auth::user()->name }}.
         </h2>
@@ -26,10 +26,10 @@
                     </div>
 
                     @if (str_contains($project->thumb, 'http'))
-                        <img class="img-fluid" style="height: 400px" src="{{ $project->thumb }}"
+                        <img class="img-fluid object-fit-cover" style="height: 400px" src="{{ $project->thumb }}"
                             alt="{{ $project->title }}">
                     @else
-                        <img class="img-fluid" style="height: 400px" src="{{ asset('storage/' . $project->thumb) }}">
+                        <img class="img-fluid object-fit-cover" style="height: 400px" src="{{ asset('storage/' . $project->thumb) }}">
                     @endif
 
                     <div class="card-body">
@@ -47,4 +47,6 @@
         </div>
 
     </div>
+
+    <h1>ADMIN/PROJECTS/SHOWTRASHED.BLADE</h1>
 @endsection

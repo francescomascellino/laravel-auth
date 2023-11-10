@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>ADMIN/PROJECTS/RECYCLE.BLADE</h1>
+
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Deleted Projects List for') }} {{ Auth::user()->name }}
         </h2>
@@ -56,7 +56,7 @@
                                 {{-- RESTORE TRASHED PROJECT BUTTON --}}
                                 <div class="d-inline-block">
                                     <a href="{{ route('admin.projects.restore', $project->id) }}"
-                                    class="btn btn-success m-1"><i class="fa-solid fa-recycle"></i></a>
+                                        class="btn btn-success m-1"><i class="fa-solid fa-recycle"></i></a>
                                 </div>
 
                                 <!-- FORCE DELETE Modal trigger button -->
@@ -121,4 +121,6 @@
         </div>
 
     </div>
+
+    <h1>ADMIN/PROJECTS/RECYCLE.BLADE</h1>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>ADMIN/PROJECTS/INDEX.BLADE</h1>
+
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Project List for') }} {{ Auth::user()->name }}
         </h2>
@@ -16,8 +16,6 @@
 
         <a href="{{ route('admin.projects.create') }}" class="btn btn-primary my-3"><i
                 class="fa-solid fa-file-circle-plus"></i> New Project</a>
-
-        <p>ADD LINKS TO CREATE AND EDIT</p>
 
         <div class="table-responsive">
             <table class="table table-light table-striped">
@@ -147,4 +145,6 @@
         </div>
 
     </div>
+
+    <h1>ADMIN/PROJECTS/INDEX.BLADE</h1>
 @endsection

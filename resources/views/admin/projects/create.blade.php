@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>ADMIN/PROJECTS/CREATE.BLADE</h1>
+
         <h2 class="fs-4 text-secondary my-4">
             {{ __('New Project Page for') }} {{ Auth::user()->name }}.
         </h2>
@@ -104,9 +104,9 @@
 
                         <input type="file" class="form-control" name="thumb" id="thumb"
                             placeholder="Upload a new image file..." aria-describedby="helpThumb">
-                            <div id="helpThumb" class="form-text">
-                                Choose a valid image file with a max size of 500kb
-                            </div>
+                        <div id="helpThumb" class="form-text">
+                            Choose a valid image file with a max size of 500kb
+                        </div>
 
                         @error('thumb')
                             <div class="text-danger">{{ $message }}</div>
@@ -124,4 +124,6 @@
         </div>
 
     </div>
+
+    <h1>ADMIN/PROJECTS/CREATE.BLADE</h1>
 @endsection
