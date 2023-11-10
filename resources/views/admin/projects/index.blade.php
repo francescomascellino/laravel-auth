@@ -17,6 +17,8 @@
         <a href="{{ route('admin.projects.create') }}" class="btn btn-primary my-3"><i
                 class="fa-solid fa-file-circle-plus"></i> New Project</a>
 
+        <p>ADD LINKS TO CREATE AND EDIT</p>
+
         <div class="table-responsive">
             <table class="table table-light table-striped">
                 <thead>
@@ -52,7 +54,6 @@
                                         class="fa-solid fa-eye"></i></a>
                                 <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning m-1"><i
                                         class="fa-solid fa-pen"></i></a>
-                                {{-- <a href="#">Delete</a> --}}
 
                                 <!-- DELETE Modal trigger button -->
                                 <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal"
@@ -80,26 +81,21 @@
                                             </div>
                                             <div class="modal-footer">
 
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal"><i class="fa-solid fa-ban"></i> Cancel</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
+                                                        class="fa-solid fa-ban"></i> Cancel</button>
 
                                                 <form action="{{ route('admin.projects.destroy', $project) }}"
                                                     method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-danger m-2" type="submit"><i class="fa-regular fa-trash-can"></i> Delete</button>
+                                                    <button class="btn btn-danger m-2" type="submit"><i
+                                                            class="fa-regular fa-trash-can"></i> Delete</button>
                                                 </form>
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <!-- Optional: Place to the bottom of scripts -->
-                                <script>
-                                    const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
-                                </script>
 
                             </td>
                         </tr>
@@ -109,8 +105,6 @@
 
                 </tbody>
             </table>
-
-
 
         </div>
 

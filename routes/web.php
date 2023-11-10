@@ -27,11 +27,21 @@ Route::middleware('auth', 'verified') // PER GLI UTENTI LOGGATI & VERIFICATI
     ->name('admin.') // NOME DELLE ROTTE INIZIA CON 'admin.'
     ->prefix('admin') // PREFIX DEGLI URL INIZIANO CON '/admin/'
     ->group(function () {
+
+        // AFTER LOGIN GET REDIRECTED TO DASHBOARD
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+        // RESTORE TRASHED ITEM ROUTE
         Route::get('projects/restore/{id}', [ProjectController::class, 'restore'])->name('projects.restore');
+
+        // FORCE DELETE TRASHED ITEM ROUTE
         Route::get('projects/forceDelete/{id}', [ProjectController::class, 'forceDelete'])->name('projects.forceDelete');
         Route::get('projects/recycle', [ProjectController::class, 'recycle'])->name('projects.recycle');
-        Route::get('projects/recycle/{id}', [ProjectController::class, 'showTrashed'])->name('projects.showTrashed');
+
+        // SHOW TRASHED PROJECT DETAILS ROUTE
+        Route::get('projects/recycle/{id}', [ProjectController::class, 'showTrashed'])->withTrashed()->name('projects.showTrashed');
+
+        // PROJECTS RESOURCE CONTROLLER ROUTES
         Route::resource('projects', ProjectController::class )->parameters(['projects' => 'project:slug']);
     });
 

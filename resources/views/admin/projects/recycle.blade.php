@@ -46,23 +46,27 @@
                             <td class="align-middle">{{ $project->description }}</td>
                             <td class="align-middle">{{ $project->tech }}</td>
                             <td class="align-middle text-center">
-                                {{-- I PROGETTI SONO COLLEGATI TRAMITE LO SLUG --}}
-                                <a href="{{ route('admin.projects.showTrashed', $project->slug) }}" class="btn btn-primary m-1"><i class="fa-solid fa-eye"></i></a>
-                                <a href="{{ route('admin.projects.restore', $project->id) }}" class="btn btn-success m-1"><i class="fa-solid fa-recycle"></i></a>
 
-                                <!-- DELETE Modal trigger button -->
+                                {{-- SHO TRASHED PROJECTS DETAILS --}}
+                                <a href="{{ route('admin.projects.showTrashed', $project->id) }}"
+                                    class="btn btn-primary m-1"><i class="fa-solid fa-eye"></i></a>
+
+                                {{-- RESTORE TRASHED PROJECT --}}
+                                <a href="{{ route('admin.projects.restore', $project->id) }}"
+                                    class="btn btn-success m-1"><i class="fa-solid fa-recycle"></i></a>
+
+                                <!-- FORCE DELETE Modal trigger button -->
                                 <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal"
                                     data-bs-target="#deleteproject{{ $project->id }}">
                                     <i class="fa-solid fa-dumpster-fire"></i>
                                 </button>
 
-                                <!-- DELETE Modal Body -->
+                                <!-- FORCE DELETE Modal Body -->
                                 <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
                                 <div class="modal fade" id="deleteproject{{ $project->id }}" tabindex="-1"
                                     data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
                                     aria-labelledby="modalTitle{{ $project->id }}" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered"
-                                        role="document">
+                                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="modalTitle{{ $project->id }}">
@@ -71,7 +75,8 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body text-start ">
-                                                <p>This operation will <strong class="text-danger">delete</strong> the project "<strong>{{$project->title}}</strong>" permanently.</p>
+                                                <p>This operation will <strong class="text-danger">delete</strong> the
+                                                    project "<strong>{{ $project->title }}</strong>" permanently.</p>
                                                 <p>Are you sure you want to continue?</p>
                                             </div>
                                             <div class="modal-footer">
@@ -79,7 +84,8 @@
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Cancel</button>
 
-                                                <a href="{{route('admin.projects.forceDelete', $project->id)}}" class="btn btn-danger m-2"><strong>Delete</strong></a>
+                                                <a href="{{ route('admin.projects.forceDelete', $project->id) }}"
+                                                    class="btn btn-danger m-2"><strong>Delete</strong></a>
 
                                             </div>
                                         </div>
@@ -101,12 +107,10 @@
                 </tbody>
             </table>
 
-            
-
         </div>
 
         <div class="my-3">
-                {{ $trashed_projects->links('pagination::bootstrap-5') }}
+            {{ $trashed_projects->links('pagination::bootstrap-5') }}
         </div>
 
     </div>

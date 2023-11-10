@@ -21,7 +21,9 @@ class ProjectController extends Controller
         // PAGINATION
         $projects = Project::orderByDesc('id')->paginate(4);
 
-        return view('admin.projects.index', compact('projects'));
+        $trashed_projects = Project::onlyTrashed()->get();
+
+        return view('admin.projects.index', compact('projects', 'trashed_projects'));
     }
 
     /**
@@ -109,8 +111,6 @@ class ProjectController extends Controller
 
     public function recycle()
     {
-        // $projects = Project::all();
-
         // PAGINATION
         $trashed_projects = Project::onlyTrashed()->paginate(4);
 
@@ -148,7 +148,6 @@ class ProjectController extends Controller
     public function showTrashed($id)
     {
         $project = Project::onlyTrashed()->find($id);
-        dd($project);
         return view('admin.projects.showTrashed', compact('project'));
     }
 }

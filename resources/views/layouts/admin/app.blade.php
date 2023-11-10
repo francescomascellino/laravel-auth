@@ -24,9 +24,12 @@
 </head>
 
 <body>
-    <div id="app">
+
+    <div id="app"> {{-- APP --}}
 
         <header>
+
+            {{-- TOP NAVBAR --}}
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
 
                 <div class="container-fluid">
@@ -84,39 +87,14 @@
 
         </header>
 
-        {{-- OLD HEADER --}}
-        {{--         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
-
-            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">BoolPress (layouts/admin/app)</a>
-
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-
-            <div class="navbar-nav">
-                <div class="nav-item text-nowrap ms-2">
-                    <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </div>
-
-        </header> --}}
-
+        {{-- MAIN CONTAINER + ROW --}}
         <div class="container-fluid vh-100">
+
             <div class="row h-100">
-                <!-- Definire solo parte del menu di navigazione inizialmente per poi
-        aggiungere i link necessari giorno per giorno
-        -->
+
+                <!-- Definire solo parte del menu di navigazione inizialmente per poi aggiungere i link necessari giorno per giorno -->
+
+                {{-- SIDEBAR --}}
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
 
                     <div class="position-sticky pt-3">
@@ -146,14 +124,45 @@
 
                 </nav>
 
+                {{-- MAIN --}}
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     @yield('content')
                 </main>
 
-            </div>
+            </div> {{-- CLOSURE TAGS MAIN CONTAINER + ROW --}}
+
         </div>
 
-    </div>
+    </div> {{-- APP CLOSURE TAG --}}
+
 </body>
 
 </html>
+
+{{-- OLD HEADER --}}
+{{--         <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
+
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">BoolPress (layouts/admin/app)</a>
+
+            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+
+            <div class="navbar-nav">
+                <div class="nav-item text-nowrap ms-2">
+                    <a class="nav-link" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </div>
+
+        </header> --}}
