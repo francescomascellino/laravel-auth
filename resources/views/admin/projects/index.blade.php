@@ -28,6 +28,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Description</th>
                         <th scope="col">Technologies used</th>
+                        <th scope="col">Quick links</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -47,7 +48,29 @@
 
                             <td class="align-middle">{{ $project->title }}</td>
                             <td class="align-middle">{{ $project->description }}</td>
-                            <td class="align-middle">{{ $project->tech }}</td>
+                            <td class="align-middle">{{ $project->tech }}
+                            </td>
+
+                            {{-- QUICK LINKS CELL --}}
+                            <td class="align-middle text-center" text-center>
+                                <div class="d-inline-block d-flex">
+
+                                    <a href="{{ $project->github }}" target="blank" class="btn btn-dark m-1">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+
+                                    <a href="{{ $project->link }}" target="blank" class="btn btn-info m-1">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+
+
+                                <div class="d-inline-block">
+
+                                </div>
+                            </td>
+
+                            {{-- ACTIONS CELL --}}
                             <td class="align-middle text-center">
 
                                 {{-- I PROGETTI SONO COLLEGATI TRAMITE LO SLUG --}}
