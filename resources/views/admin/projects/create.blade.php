@@ -123,7 +123,6 @@
             </div>
         </div>
 
+        <h1>ADMIN/PROJECTS/CREATE.BLADE</h1>
     </div>
-
-    <h1>ADMIN/PROJECTS/CREATE.BLADE</h1>
 @endsection

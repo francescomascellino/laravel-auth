@@ -63,3 +63,8 @@ NEL MARKUP (ADMIN/PROJECTS/INDEX.BLADE IN THIS EXAMPLE):
 </div>
 ```
 
+Bootstrap responsiveness order:
+
+```
+general (es d-none) - sm (es d-sm-none) - md (es d-md-block) lg (es d-lg-block)
+```

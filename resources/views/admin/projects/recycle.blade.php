@@ -23,7 +23,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Preview</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Description</th>
+                        <th scope="col" class="d-none d-sm-none d-md-table-cell">Description</th>
                         <th scope="col">Deleted on</th>
                         <th scope="col">Actions</th>
                     </tr>
@@ -43,24 +43,24 @@
 
 
                             <td class="align-middle">{{ $project->title }}</td>
-                            <td class="align-middle">{{ $project->description }}</td>
+                            <td class="align-middle d-none d-sm-none d-md-table-cell">{{ $project->description }}</td>
                             <td class="align-middle">{{ $project->deleted_at }}</td>
                             <td class="align-middle text-center">
 
                                 {{-- SHOW TRASHED PROJECTS DETAILS BUTTON --}}
-                                <div class="d-inline-block">
+                                <div class="">
                                     <a href="{{ route('admin.projects.showTrashed', $project->id) }}"
                                         class="btn btn-primary m-1"><i class="fa-solid fa-eye"></i></a>
                                 </div>
 
                                 {{-- RESTORE TRASHED PROJECT BUTTON --}}
-                                <div class="d-inline-block">
+                                <div class="">
                                     <a href="{{ route('admin.projects.restore', $project->id) }}"
                                         class="btn btn-success m-1"><i class="fa-solid fa-recycle"></i></a>
                                 </div>
 
                                 <!-- FORCE DELETE Modal trigger button -->
-                                <div class="d-inline-block">
+                                <div class="">
                                     <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal"
                                         data-bs-target="#deleteproject{{ $project->id }}">
                                         <i class="fa-solid fa-dumpster-fire"></i>
@@ -120,7 +120,6 @@
             {{ $trashed_projects->links('pagination::bootstrap-5') }}
         </div>
 
+        <h1>ADMIN/PROJECTS/RECYCLE.BLADE</h1>
     </div>
-
-    <h1>ADMIN/PROJECTS/RECYCLE.BLADE</h1>
 @endsection

@@ -24,7 +24,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Preview</th>
                         <th scope="col">Title</th>
-                        <th scope="col">Description</th>
+                        <th scope="col" class="d-none d-sm-none d-md-table-cell">Description</th>
                         <th scope="col">Technologies used</th>
                         <th scope="col">Quick links</th>
                         <th scope="col">Actions</th>
@@ -45,7 +45,7 @@
 
 
                             <td class="align-middle">{{ $project->title }}</td>
-                            <td class="align-middle">{{ $project->description }}</td>
+                            <td class="align-middle d-none d-sm-none d-md-table-cell">{{ $project->description }}</td>
                             <td class="align-middle">{{ $project->tech }}
                             </td>
 
@@ -145,7 +145,6 @@
             {{ $projects->links('pagination::bootstrap-5') }}
         </div>
 
+        <h1>ADMIN/PROJECTS/INDEX.BLADE</h1>
     </div>
-
-    <h1>ADMIN/PROJECTS/INDEX.BLADE</h1>
 @endsection

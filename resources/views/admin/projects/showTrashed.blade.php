@@ -29,7 +29,8 @@
                         <img class="img-fluid object-fit-cover" style="height: 400px" src="{{ $project->thumb }}"
                             alt="{{ $project->title }}">
                     @else
-                        <img class="img-fluid object-fit-cover" style="height: 400px" src="{{ asset('storage/' . $project->thumb) }}">
+                        <img class="img-fluid object-fit-cover" style="height: 400px"
+                            src="{{ asset('storage/' . $project->thumb) }}">
                     @endif
 
                     <div class="card-body">
@@ -46,7 +47,6 @@
 
         </div>
 
+        <h1>ADMIN/PROJECTS/SHOWTRASHED.BLADE</h1>
     </div>
-
-    <h1>ADMIN/PROJECTS/SHOWTRASHED.BLADE</h1>
 @endsection

@@ -30,7 +30,8 @@
         <header>
 
             {{-- TOP NAVBAR --}}
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
+            <nav
+                class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top bg-dark flex-md-nowrap p-2 shadow d-flex flex-row flex-nowrap">
 
                 <div class="container-fluid">
 
@@ -125,14 +126,17 @@
 
                     </div>
 
-                    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    {{-- OLD COLLAPSED SIDEBAR BTN POSITION --}}
+
+                    <input class="form-control form-control-dark w-50 d-none d-sm-inline-block " type="text"
+                        placeholder="Search" aria-label="Search">
+
+                    {{-- collapsed position-absolute REMOVED --}}
+                    <button class="navbar-toggler  d-md-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
-                    <input class="form-control form-control-dark w-50" type="text" placeholder="Search"
-                        aria-label="Search">
 
                     <div class="collapse navbar-collapse justify-content-end flex-grow-0" id="navbarNavDarkDropdown">
 
@@ -191,11 +195,42 @@
                 <!-- Definire solo parte del menu di navigazione inizialmente per poi aggiungere i link necessari giorno per giorno -->
 
                 {{-- SIDEBAR --}}
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark navbar-dark sidebar collapse">
+                <nav id="sidebarMenu" class="col col-md-3 col-lg-2  bg-dark navbar-dark collapse sidebar d-md-block">
 
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
+
                             <li class="nav-item">
+
+                                <div class="dropdown d-md-none">
+                                    <a class="nav-link text-white dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ Auth::user()->name }} - Quick Links
+                                    </a>
+
+                                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-start">
+                                        <li>
+                                            <a class="dropdown-item" href="/">{{ __('Home') }}</a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item"
+                                                href="{{ url('profile') }}">{{ __('Profile') }}</a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
 
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
@@ -262,3 +297,20 @@
             </div>
 
         </header> --}}
+
+<div>
+
+    <button class="btn btn-primary d-md-none" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
+
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            ...
+        </div>
+    </div>
+
+</div>

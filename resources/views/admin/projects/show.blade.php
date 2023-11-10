@@ -29,7 +29,8 @@
                         <img class="img-fluid object-fit-cover" style="height: 400px" src="{{ $project->thumb }}"
                             alt="{{ $project->title }}">
                     @else
-                        <img class="img-fluid object-fit-cover" style="height: 400px" src="{{ asset('storage/' . $project->thumb) }}">
+                        <img class="img-fluid object-fit-cover" style="height: 400px"
+                            src="{{ asset('storage/' . $project->thumb) }}">
                     @endif
 
                     <div class="card-body">
@@ -45,7 +46,6 @@
         <a href="{{ route('admin.projects.index') }}" class="btn btn-primary my-3"><i
                 class="fa-solid fa-arrow-rotate-left"></i> Back</a>
 
+        <h1>ADMIN/PROJECTS/SHOW.BLADE</h1>
     </div>
-
-    <h1>ADMIN/PROJECTS/SHOW.BLADE</h1>
 @endsection

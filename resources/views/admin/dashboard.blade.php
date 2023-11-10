@@ -50,7 +50,6 @@
             </div>
         </div>
 
+        <h1>ADMIN/DASHBOARD.BLADE</h1>
     </div>
-
-    <h1>ADMIN/DASHBOARD.BLADE</h1>
 @endsection
