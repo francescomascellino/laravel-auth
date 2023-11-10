@@ -140,6 +140,6 @@
             {{ $projects->links('pagination::bootstrap-5') }}
         </div>
 
-        <h1>ADMIN/PROJECTS/INDEX.BLADE</h1>
+        {{-- <h1>ADMIN/PROJECTS/INDEX.BLADE</h1> --}}
     </div>
 @endsection

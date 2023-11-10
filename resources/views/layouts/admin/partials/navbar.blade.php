@@ -91,7 +91,8 @@
                         <path class="cls-10" d="M60.4176,15H52V46h9V15.5824A.5823.5823,0,0,0,60.4176,15Z" />
                     </g>
                 </svg>
-                (layouts/admin/app)
+                {{isset($page_title) ? ' ' . $page_title : ''}}
+                {{-- (layouts/admin/app) --}}
             </a>
 
         </div>

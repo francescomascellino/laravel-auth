@@ -40,6 +40,6 @@
         <a href="{{ route('admin.projects.index') }}" class="btn btn-primary my-3"><i
                 class="fa-solid fa-arrow-rotate-left"></i> Back</a>
 
-        <h1>ADMIN/PROJECTS/SHOW.BLADE</h1>
+        {{-- <h1>ADMIN/PROJECTS/SHOW.BLADE</h1> --}}
     </div>
 @endsection

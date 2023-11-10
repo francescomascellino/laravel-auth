@@ -115,6 +115,6 @@
             {{ $trashed_projects->links('pagination::bootstrap-5') }}
         </div>
 
-        <h1>ADMIN/PROJECTS/RECYCLE.BLADE</h1>
+        {{-- <h1>ADMIN/PROJECTS/RECYCLE.BLADE</h1> --}}
     </div>
 @endsection

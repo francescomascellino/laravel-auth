@@ -50,7 +50,7 @@
                 {{ $projects->links('pagination::bootstrap-5') }}
             </div>
 
-            <h1>welcome.blade</h1>
+            {{-- <h1>welcome.blade</h1> --}}
         </div>
     </div>
 @endsection

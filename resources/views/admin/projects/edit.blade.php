@@ -125,6 +125,6 @@
             </div>
         </div>
 
-        <h1>ADMIN/PROJECTS/EDIT.BLADE</h1>
+        {{-- <h1>ADMIN/PROJECTS/EDIT.BLADE</h1> --}}
     </div>
 @endsection

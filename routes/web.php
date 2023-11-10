@@ -42,10 +42,11 @@ Route::middleware('auth', 'verified') // PER GLI UTENTI LOGGATI & VERIFICATI
         Route::get('projects/recycle/{id}', [ProjectController::class, 'showTrashed'])->withTrashed()->name('projects.showTrashed');
 
         // PROJECTS RESOURCE CONTROLLER ROUTES
-        Route::resource('projects', ProjectController::class )->parameters(['projects' => 'project:slug']);
+        Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
     });
 
-    Route::get('projects/recycle', [ProjectController::class, 'recycle']); // FARE DOMANDE SU QUESTO
+// FARE DOMANDE SU QUESTO
+// Route::get('projects/recycle', [ProjectController::class, 'recycle'])->name("project.recycle");
 
 /* Route::get('/dashboard', function () {
     return view('dashboard');

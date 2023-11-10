@@ -11,8 +11,9 @@ class DashboardController extends Controller
 {
     function index() {
 
+        $page_title = 'Dashboard';
         $total_projects = Project::all()->count();
         $total_users = User::all()->count();
-        return view('admin.dashboard', compact('total_projects', 'total_users'));
+        return view('admin.dashboard', compact('total_projects', 'total_users', 'page_title'));
     }
 }

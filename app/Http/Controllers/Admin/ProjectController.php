@@ -18,12 +18,14 @@ class ProjectController extends Controller
     {
         // $projects = Project::all();
 
+        $page_title = 'Projects';
+
         // PAGINATION
         $projects = Project::orderByDesc('id')->paginate(4);
 
         $trashed_projects = Project::onlyTrashed()->get();
 
-        return view('admin.projects.index', compact('projects', 'trashed_projects'));
+        return view('admin.projects.index', compact('projects', 'trashed_projects', 'page_title'));
     }
 
     /**
@@ -31,7 +33,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $page_title = 'Add New';
+        return view('admin.projects.create', compact('page_title'));
     }
 
     /**
@@ -61,7 +64,8 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('admin.projects.show', compact('project'));
+        $page_title = 'Details';
+        return view('admin.projects.show', compact('project', 'page_title'));
     }
 
     /**
@@ -69,7 +73,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $page_title = 'Edit';
+        return view('admin.projects.edit', compact('project', 'page_title'));
     }
 
     /**
@@ -117,10 +122,11 @@ class ProjectController extends Controller
 
     public function recycle()
     {
+        $page_title = 'Recycle Bin';
         // PAGINATION
         $trashed_projects = Project::onlyTrashed()->orderByDesc('deleted_at')->paginate(4);
 
-        return view('admin.projects.recycle', compact('trashed_projects'));
+        return view('admin.projects.recycle', compact('trashed_projects', 'page_title'));
     }
 
     public function restore($id)
@@ -153,7 +159,8 @@ class ProjectController extends Controller
 
     public function showTrashed($id)
     {
+        $page_title = 'Deleted Item Details';
         $project = Project::onlyTrashed()->find($id);
-        return view('admin.projects.showTrashed', compact('project'));
+        return view('admin.projects.showTrashed', compact('project', 'page_title'));
     }
 }
