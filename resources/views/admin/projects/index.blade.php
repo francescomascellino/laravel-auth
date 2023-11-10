@@ -49,19 +49,30 @@
                             <td class="align-middle">{{ $project->description }}</td>
                             <td class="align-middle">{{ $project->tech }}</td>
                             <td class="align-middle text-center">
+
                                 {{-- I PROGETTI SONO COLLEGATI TRAMITE LO SLUG --}}
-                                <a href="{{ route('admin.projects.show', $project->slug) }}" class="btn btn-primary m-1"><i
-                                        class="fa-solid fa-eye"></i></a>
-                                <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning m-1"><i
-                                        class="fa-solid fa-pen"></i></a>
 
-                                <!-- DELETE Modal trigger button -->
-                                <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal"
-                                    data-bs-target="#deleteproject{{ $project->id }}">
-                                    <i class="fa-regular fa-trash-can"></i>
-                                </button>
+                                {{-- SHOW PROJECT DETAILS BUTTON --}}
+                                <div class="d-inline-block">
+                                    <a href="{{ route('admin.projects.show', $project->slug) }}"
+                                        class="btn btn-primary m-1"><i class="fa-solid fa-eye"></i></a>
+                                </div>
 
-                                <!-- DELETE Modal Body -->
+                                {{-- EDIT PROJECT BUTTON --}}
+                                <div class="d-inline-block">
+                                    <a href="{{ route('admin.projects.edit', $project->slug) }}"
+                                        class="btn btn-warning m-1"><i class="fa-solid fa-pen"></i></a>
+                                </div>
+
+                                <!-- SOFT DELETE Modal trigger button -->
+                                <div class="d-inline-block">
+                                    <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal"
+                                        data-bs-target="#deleteproject{{ $project->id }}">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </button>
+                                </div>
+
+                                <!-- SOFT DELETE Modal Body -->
                                 <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
                                 <div class="modal fade" id="deleteproject{{ $project->id }}" tabindex="-1"
                                     data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"

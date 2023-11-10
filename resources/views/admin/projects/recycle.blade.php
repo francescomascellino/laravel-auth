@@ -24,7 +24,7 @@
                         <th scope="col">Preview</th>
                         <th scope="col">Title</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Technologies used</th>
+                        <th scope="col">Deleted on</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -44,22 +44,29 @@
 
                             <td class="align-middle">{{ $project->title }}</td>
                             <td class="align-middle">{{ $project->description }}</td>
-                            <td class="align-middle">{{ $project->tech }}</td>
+                            <td class="align-middle">{{ $project->deleted_at }}</td>
                             <td class="align-middle text-center">
 
-                                {{-- SHO TRASHED PROJECTS DETAILS --}}
-                                <a href="{{ route('admin.projects.showTrashed', $project->id) }}"
-                                    class="btn btn-primary m-1"><i class="fa-solid fa-eye"></i></a>
+                                {{-- SHOW TRASHED PROJECTS DETAILS BUTTON --}}
+                                <div class="d-inline-block">
+                                    <a href="{{ route('admin.projects.showTrashed', $project->id) }}"
+                                        class="btn btn-primary m-1"><i class="fa-solid fa-eye"></i></a>
+                                </div>
 
-                                {{-- RESTORE TRASHED PROJECT --}}
-                                <a href="{{ route('admin.projects.restore', $project->id) }}"
+                                {{-- RESTORE TRASHED PROJECT BUTTON --}}
+                                <div class="d-inline-block">
+                                    <a href="{{ route('admin.projects.restore', $project->id) }}"
                                     class="btn btn-success m-1"><i class="fa-solid fa-recycle"></i></a>
+                                </div>
 
                                 <!-- FORCE DELETE Modal trigger button -->
-                                <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal"
-                                    data-bs-target="#deleteproject{{ $project->id }}">
-                                    <i class="fa-solid fa-dumpster-fire"></i>
-                                </button>
+                                <div class="d-inline-block">
+                                    <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal"
+                                        data-bs-target="#deleteproject{{ $project->id }}">
+                                        <i class="fa-solid fa-dumpster-fire"></i>
+                                    </button>
+                                </div>
+
 
                                 <!-- FORCE DELETE Modal Body -->
                                 <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->

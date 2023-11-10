@@ -13,7 +13,7 @@ class Project extends Model
 
     use SoftDeletes;
 
-    protected $fillable = ['title', 'slug', 'thumb', 'description', 'tech'];
+    protected $fillable = ['title', 'slug', 'thumb', 'description', 'tech', 'github', 'link'];
 
     // CHECK IF ALREADY EXISTS WHEN ADDING ENTRIES
     public function generateSlug($title)

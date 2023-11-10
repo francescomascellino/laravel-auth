@@ -69,6 +69,33 @@
                         @error('tech')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="github" class="form-label"><strong>GitHub Link</strong></label>
+
+                        <input type="text" class="form-control" name="github" id="github"
+                            aria-describedby="helpTitle" value="{{ old('github') ? old('github') : $project->github }}">
+
+                        @error('github')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="link" class="form-label"><strong>Project Link</strong></label>
+
+                        <input type="text" class="form-control" name="link" id="link"
+                            aria-describedby="helpTitle" value="{{ old('link') ? old('link') : $project->link }}">
+
+                        @error('link')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
                     </div>
 
                     <div class="mb-3">

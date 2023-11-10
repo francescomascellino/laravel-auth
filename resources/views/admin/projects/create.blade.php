@@ -26,10 +26,13 @@
 
                     <div class="mb-3">
 
-                        <label for="title" class="form-label"><strong>Title</strong></label>
+                        <label for="title" class="form-label"><strong>* Title</strong></label>
 
                         <input type="text" class="form-control" name="title" id="title"
-                            aria-describedby="helpTitle" placeholder="New project Title">
+                            aria-describedby="helpTitle" placeholder="New Project Title">
+                        <div id="helpTitle" class="form-text">
+                            Your title must be 3-200 characters long.
+                        </div>
 
                         @error('title')
                             <div class="text-danger">{{ $message }}</div>
@@ -41,11 +44,11 @@
 
                         <label for="description" class="form-label"><strong>Description</strong></label>
 
-                        <textarea class="form-control" name="description" id="description" aria-describedby="helpTitle" cols="30" rows="5" placeholder="New project Description"></textarea>
-
-                        {{-- OLD FORM --}}
-                        {{-- <input type="text" class="form-control" name="description" id="description"
-                            aria-describedby="helpTitle" placeholder="New project Description"> --}}
+                        <textarea class="form-control" name="description" id="description" aria-describedby="helpDescription" cols="30"
+                            rows="5" placeholder="New Project Description"></textarea>
+                        <div id="helpDescription" class="form-text">
+                            Your description must be 3-500 characters long.
+                        </div>
 
                         @error('description')
                             <div class="text-danger">{{ $message }}</div>
@@ -57,12 +60,42 @@
 
                         <label for="tech" class="form-label"><strong>Technologies Used</strong></label>
 
-                        <input type="text" class="form-control" name="tech" id="tech"
-                            aria-describedby="helpTitle" placeholder="Tech used creating the New Project">
+                        <input type="text" class="form-control" name="tech" id="tech" aria-describedby="helpTech"
+                            placeholder="Tech used creating the New Project">
+                        <div id="helpTech" class="form-text">
+                            Your tech list must be 3-500 characters long.
+                        </div>
 
                         @error('tech')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="github" class="form-label"><strong>GitHub Link</strong></label>
+
+                        <input type="text" class="form-control" name="github" id="github"
+                            placeholder="Enter your GitHub Project Repository Link">
+
+                        @error('github')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="link" class="form-label"><strong>Project Link</strong></label>
+
+                        <input type="text" class="form-control" name="link" id="link"
+                            placeholder="Enter your Project Link">
+
+                        @error('link')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
                     </div>
 
                     <div class="mb-3">
@@ -70,7 +103,10 @@
                         <label for="thumb" class="form-label"><strong>Choose a Thumbnail image file</strong></label>
 
                         <input type="file" class="form-control" name="thumb" id="thumb"
-                            placeholder="Upload a new image file..." aria-describedby="fileHelpThumb">
+                            placeholder="Upload a new image file..." aria-describedby="helpThumb">
+                            <div id="helpThumb" class="form-text">
+                                Choose a valid image file with a max size of 500kb
+                            </div>
 
                         @error('thumb')
                             <div class="text-danger">{{ $message }}</div>
@@ -78,8 +114,10 @@
 
                     </div>
 
-                    <button type="submit" class="btn btn-success my-3"><i class="fa-solid fa-floppy-disk"></i> Save</button>
-                    <a class="btn btn-primary" href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-ban"></i> Cancel</a>
+                    <button type="submit" class="btn btn-success my-3"><i class="fa-solid fa-floppy-disk"></i>
+                        Save</button>
+                    <a class="btn btn-primary" href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-ban"></i>
+                        Cancel</a>
 
                 </form>
             </div>
