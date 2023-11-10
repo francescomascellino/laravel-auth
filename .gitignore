@@ -17,3 +17,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+resources/views/layouts/admin/app.blade copy.php
+resources/views/profile/edit.blade_bk.php
