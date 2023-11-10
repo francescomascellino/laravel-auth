@@ -1,3 +1,4 @@
+<!-- TO IGNORE -->
 @extends('layouts.app')
 @section('content')
 <!-- Header -->

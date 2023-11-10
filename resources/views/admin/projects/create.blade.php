@@ -10,15 +10,7 @@
         <div class="row justify-content-center my-3">
             <div class="col">
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                @include('admin.projects.partials.error_alert')
 
                 <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
 

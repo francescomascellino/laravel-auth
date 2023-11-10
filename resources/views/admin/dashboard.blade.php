@@ -7,11 +7,7 @@
             {{ __('Dashboard') }}
         </h2>
 
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
+        @include('admin.projects.partials.status_alert')
 
         <div class="row justify-content-center">
             <div class="col">

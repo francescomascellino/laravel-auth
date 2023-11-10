@@ -10,13 +10,7 @@
             {{ __('Showing Project') }} ID: {{ $project->id }}
         </h3>
 
-        @if (session('status'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-
-                {{ session('status') }}
-            </div>
-        @endif
+        @include('admin.projects.partials.status_alert')
 
         <div class="row justify-content-center my-3">
             <div class="col-6">

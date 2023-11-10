@@ -7,12 +7,7 @@
             {{ __('Project List for') }} {{ Auth::user()->name }}
         </h2>
 
-        @if (session('status'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                {{ session('status') }}
-            </div>
-        @endif
+        @include('admin.projects.partials.status_alert')
 
         <a href="{{ route('admin.projects.create') }}" class="btn btn-primary my-3"><i
                 class="fa-solid fa-file-circle-plus"></i> New Project</a>
